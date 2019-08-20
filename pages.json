@@ -1,0 +1,79 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "pages/register/register",
+			"style": {
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
+			}
+		}
+	    ,{
+            "path" : "pages/ticket/ticket",
+            "style" : {
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
+			}
+        }
+		,{
+		    "path" : "pages/ticket/expired",
+		    "style" : {
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
+			}
+		}
+		,{
+		    "path" : "pages/ticket/used",
+		    "style" : {
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
+			}
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
