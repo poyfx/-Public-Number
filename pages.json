@@ -3,7 +3,17 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
 			}
 		}, {
 			"path": "pages/register/register",
@@ -69,6 +79,70 @@
 				}
 			}
 		}
+        ,{
+            "path" : "pages/myVIP/myVIP",
+            "style" : {
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/myVIP/modifyPhoneNumber/modifyPhoneNumber",
+            "style" : {
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/myVIP/modifyPwd/modifyPwd",
+            "style" : {
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/selfService/selfService",
+            "style" : {
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

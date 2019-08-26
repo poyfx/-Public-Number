@@ -8,11 +8,11 @@
 					<view class="left" @tap="back">
 						<uni-icon type="arrowleft" size="27"></uni-icon>
 					</view>
-					<view>注册</view>
+					<view>我的卡券</view>
 				</view>
 			</view>
 
-			<ticket-nav @other="other"></ticket-nav>
+			<wuc-tab :tab-list="tabList" :tabCur.sync="TabCur" @change="tabChange" textFlex></wuc-tab>
 
 
 			<view class="tic_ticket ">
@@ -33,8 +33,8 @@
 							有限期至：2016-12-12
 						</view>
 					</view>
-					<view class="tic_ticket_right">
-						<text>去使用</text>
+					<view class="tic_ticket_right ">
+						<text class="never_use">去使用</text>
 					</view>
 				</view>
 			</view>
@@ -45,20 +45,40 @@
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import ticketNav from "@/components/ticket/ticket-nav.vue"
+	import WucTab from '@/components/wuc-tab/wuc-tab.vue';
 	export default {
 		data() {
 			return {
-
+				TabCur: 0,
+				tabList: [{
+						name: '未使用'
+					}, {
+						name: '已使用'
+					},
+					{
+						name: '已过期'
+					}
+				],
 			};
 		},
-		methods:{
-			other(){
-				
+		methods: {
+			tabChange(e){
+				console.log(e)
+				if(e == 1){
+					uni.navigateTo({
+						url: '../../pages/ticket/used'
+					})
+				}else if(e==2){
+					uni.navigateTo({
+						url: '../../pages/ticket/expired'
+					})
+				}
 			}
 		},
 		components: {
 			uniIcon,
-			ticketNav
+			ticketNav,
+			WucTab
 		},
 	}
 </script>
@@ -144,10 +164,8 @@
 					text {
 						width: 58px;
 						height: 24px;
-						background: #fff;
-						border: 1px solid $border;
+
 						font-size: 12px;
-						color: $border;
 						border-radius: 12px;
 						padding: 3px 11px;
 						margin-right: 12px;
@@ -156,5 +174,11 @@
 			}
 
 		}
+	}
+
+	.never_use {
+		border: 1px solid $border;
+		color: $border;
+		background: #fff;
 	}
 </style>

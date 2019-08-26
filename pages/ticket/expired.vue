@@ -8,13 +8,13 @@
 					<view class="left" @tap="back">
 						<uni-icon type="arrowleft" size="27"></uni-icon>
 					</view>
-					<view>注册</view>
+					<view>我的卡券</view>
 				</view>
 			</view>
-			
-			<ticket-nav></ticket-nav>
-			
-			
+
+			<wuc-tab :tab-list="tabList" :tabCur.sync="TabCur" @change="tabChange" textFlex></wuc-tab>
+
+
 			<view class="tic_ticket ">
 				<view class="tic_ticket_nouse flex">
 					<view class="tic_ticket_left">
@@ -45,15 +45,40 @@
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import ticketNav from "@/components/ticket/ticket-nav.vue"
+	import WucTab from '@/components/wuc-tab/wuc-tab.vue';
 	export default {
 		data() {
 			return {
-
+				TabCur: 2,
+				tabList: [{
+						name: '未使用'
+					}, {
+						name: '已使用'
+					},
+					{
+						name: '已过期'
+					}
+				],
 			};
+		},
+		methods: {
+			tabChange(e) {
+				console.log(e)
+				if (e == 0) {
+					uni.navigateTo({
+						url: '../../pages/ticket/ticket'
+					})
+				} else if (e == 1) {
+					uni.navigateTo({
+						url: '../../pages/ticket/used'
+					})
+				}
+			}
 		},
 		components: {
 			uniIcon,
-			ticketNav
+			ticketNav,
+			WucTab
 		},
 	}
 </script>
@@ -61,66 +86,80 @@
 <style lang="scss">
 	$border:#f9243d;
 	$money:#ff5343;
+
 	.tic {
-		
-		.tic_ticket{
+
+		.tic_ticket {
 			padding: 16px 16px 0;
-			.tic_ticket_nouse{
+
+			.tic_ticket_nouse {
 				width: 100%;
 				height: 100px;
 				background: url(../../static/img/ticket.png) no-repeat;
 				background-size: 100% 100%;
 				align-content: center;
 				align-items: center;
-				text-align:center;
-				.tic_ticket_left{
+				text-align: center;
+
+				.tic_ticket_left {
 					width: 33%;
-					height:100%;
-					padding-top:13px;
-					.tic_ticket_left_money{
+					height: 100%;
+					padding-top: 13px;
+
+					.tic_ticket_left_money {
 						color: $money;
 						font-size: 34px;
-						font-weight:Medium;
-						text{
+						font-weight: Medium;
+
+						text {
 							font-size: 16px;
 						}
 					}
-					.tic_ticket_left_text{
+
+					.tic_ticket_left_text {
 						font-size: 16px;
 						color: $text-9ecolor;
 					}
 				}
-				.tic_ticket_center{
+
+				.tic_ticket_center {
 					width: 50%;
-					height:100%;
-						padding-top:13px;
-					.tic_ticket_center_text{
-						color:$text-61color ;
+					height: 100%;
+					padding-top: 13px;
+
+					.tic_ticket_center_text {
+						color: $text-61color;
 						font-size: 20px;
 						font-weight: 400;
-						margin-bottom:24px;
+						margin-bottom: 24px;
 					}
-					.tic_ticket_center_date{
+
+					.tic_ticket_center_date {
 						font-size: 12px;
 						color: $text-9ecolor;
 					}
 				}
-				.tic_ticket_right{
+
+				.tic_ticket_right {
 					width: 25%;
-					text{
+
+					text {
 						width: 58px;
 						height: 24px;
-						background: #fff;
-						border: 1px solid $border;
+
 						font-size: 12px;
-						color:$border ;
+
 						border-radius: 12px;
 						padding: 3px 11px;
 						margin-right: 12px;
+
+						background-color: #D2C2C1;
+						color: #fff;
+
 					}
 				}
 			}
-			
+
 		}
 	}
 </style>
