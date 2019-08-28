@@ -27,7 +27,7 @@
 		</view>
 		<view class="bgcf mTB12 shadow0130">
 			<uniList>
-				<uniListItem title="我的卡券" thumb="../../static/img/My-card-ticket.png"></uniListItem>
+				<uniListItem title="我的卡券" @tap="myTicket" thumb="../../static/img/My-card-ticket.png"></uniListItem>
 			</uniList>
 		</view>
 		<view class="bgcf mTB12 shadow0130">
@@ -54,7 +54,14 @@
 
 		},
 		methods: {
-
+			myTicket(){
+				uni.navigateTo({
+					url: '../ticket/ticket',
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
+			},
 		},
 		components: {
 			uniList,
@@ -70,7 +77,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		background:url(../../static/img/index_bg.png)no-repeat;
+		background:url(../../static/img/index_bg.png) no-repeat;
 		background-size:100% 100%;
 		margin-top: 8px;
 		color:$uni-text-color-inverse;

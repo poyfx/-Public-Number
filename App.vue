@@ -14,7 +14,7 @@
 
 <style>
 	/*每个页面公共css */
-	@font-face {
+/* 	@font-face {
 		font-family:"Bold";
 		src: url(./common/font/SourceHanSansCN-Bold.otf);
 	}
@@ -24,6 +24,6 @@
 	}
 	@font-face {
 		font-family:"Regular";
-		src: url(./common/font/SourceHanSansCN-Regular.otf);
-	}
+		src: url (./common/font/SourceHanSansCN-Regular.otf);
+	 } */
 </style>
