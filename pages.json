@@ -78,6 +78,22 @@
 					}
 				}
 			}
+		},
+		{
+			"path": "pages/ticket/invoice_detail",
+			"style": {
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
+			}
 		}
         ,{
             "path" : "pages/myVIP/myVIP",
@@ -129,6 +145,22 @@
         }
         ,{
             "path" : "pages/selfService/selfService",
+            "style" : {
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 100,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": {
+						"background": "black"
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/ticket/used_range/used_range",
             "style" : {
 				"navigationBarTextStyle": "black",
 				"navigationStyle": "custom",

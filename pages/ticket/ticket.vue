@@ -34,7 +34,7 @@
 						</view>
 					</view>
 					<view class="tic_ticket_right ">
-						<text class="never_use">去使用</text>
+						<text class="never_use" @tap="goUse">去使用</text>
 					</view>
 				</view>
 			</view>
@@ -63,17 +63,26 @@
 		},
 		methods: {
 			tabChange(e){
-				console.log(e)
 				if(e == 1){
-					uni.navigateTo({
-						url: '../../pages/ticket/used'
+					uni.redirectTo({
+						url: './used'
 					})
 				}else if(e==2){
-					uni.navigateTo({
-						url: '../../pages/ticket/expired'
+					uni.redirectTo({
+						url: './expired'
 					})
 				}
-			}
+			},
+			goUse(){
+				uni.navigateTo({
+					url:'./invoice_detail'
+				})
+			},
+			back(){
+				uni.navigateBack({
+					delta:1
+				})
+			},
 		},
 		components: {
 			uniIcon,
@@ -144,7 +153,6 @@
 					width: 50%;
 					height: 100%;
 					padding-top: 13px;
-
 					.tic_ticket_center_text {
 						color: $text-61color;
 						font-size: 20px;

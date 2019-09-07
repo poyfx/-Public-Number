@@ -1,7 +1,17 @@
 <template>
 	<view>
 		<view class="reg">
-			<titles :titles="title"></titles>
+			<view class="header flex">
+				<view class="header_bar">
+				
+				</view>
+				<view class="header_title flex">
+					<view class="left" @tap="back">
+						<uni-icon type="arrowleft" size="27"></uni-icon>
+					</view>
+					<view>修改密码</view>
+				</view>
+			</view>
 			<view class="reg_img">
 				<image src="../../static/img/logo.png" mode="aspectFit"></image>
 			</view>
@@ -30,29 +40,28 @@
 	export default {
 		data() {
 			return {
-				title: "注册",
-				show: false,
-				type: 'password',
-				shows: "reg_input_img_show",
-				nos: "reg_input_img_no",
+				show:false,
+				type:'password',
+				shows:"reg_input_img_show",
+				nos:"reg_input_img_no",
 			};
 		},
-		methods: {
-			showpwd() {
-				this.show = !this.show;
-				if (this.show) {
+		methods:{
+			showpwd(){
+				this.show =!this.show;
+				if(this.show){
 					this.type = "text"
-				} else {
+				}else{
 					this.type = "password"
 				}
 			},
-			go() {
+			go(){
 				uni.navigateTo({
-					url: '../index/index'
+					url:'../ticket/ticket'
 				})
 			},
 		},
-		components: {
+		components:{
 			uniIcon
 		}
 	}
@@ -73,21 +82,9 @@
 		.reg_input {
 			width: 100%;
 			box-sizing: border-box;
-
-			input {
-				box-sizing: border-box;
-				height: 100%;
-				border: 1px solid #e5e5e5;
-				padding: 12px;
-				margin: 12px 16px;
-				border-radius: 4px;
-				background: $input-bgc;
-			}
-
-			.reg_inpu_code {
-				position: relative;
-
-				text {
+			.reg_inpu_code{
+				position:relative;
+				text{
 					font-size: 16px;
 					color: #007AFF;
 					position: absolute;
@@ -95,10 +92,8 @@
 					right: 7%;
 				}
 			}
-
 			.reg_input_password {
-				position: relative;
-
+				position:relative;
 				.reg_input_img_show {
 					width: 24px;
 					height: 24px;
@@ -106,7 +101,6 @@
 					top: 25%;
 					right: 8%;
 				}
-
 				.reg_input_img_no {
 					width: 24px;
 					height: 24px;
@@ -117,6 +111,14 @@
 				}
 			}
 
+
+			input {
+				border: 1px solid #e5e5e5;
+				padding: 12px;
+				margin: 12px 16px;
+				border-radius: 4px;
+				background: $input-bgc;
+			}
 		}
 
 		.reg_btn {
